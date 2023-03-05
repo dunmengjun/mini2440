@@ -1,0 +1,19 @@
+[package]
+name = "mini2440"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+volatile-register = "0.2.1"
+bounded-registers = { git = "https://gitee.com/qinxiaoyu/bounded-registers.git" }
+typenum = "1.16.0"
+
+
+# 为了fix no_std Can't find crate for 'test' 错误 详情请见
+# https://github.com/rust-lang/vscode-rust/issues/729#issuecomment-1102050361
+[[bin]]
+name = "mini2440"
+test = false
+bench = false

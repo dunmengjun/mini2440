@@ -1,0 +1,11 @@
+[build]
+target = "armv4t-none-eabi"
+
+[unstable]
+build-std = ["core"]
+
+
+[target.armv4t-none-eabi]
+# force-frame-pointers=yes 强制打开栈功能，免得被编译器优化掉
+# rustflags = ["-Clink-arg=-Tsrc/linker.ld", "-Cforce-frame-pointers=yes"]
+rustflags = ["-Clink-arg=-Tsrc/linker.ld"]
